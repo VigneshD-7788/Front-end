@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css properties</title>
+        <style>
+            select{
+                background-color: rgba(178, 196, 19, 0.842);
+                color: rgb(153, 5, 190);
+                font-size: 20px;
+                opacity: 0.7;
+            }
+            div{
+                background-color: rgb(25, 216, 35);
+            }
+            p{
+                font-family: verdana;
+                font-size: 15px;
+                width: 30%;
+            }
+            a{
+                text-decoration: none;
+            }
+            input{
+                background-color: blueviolet;
+                color: black;
+                font-size: 25px;
+                border-radius: 15px;
+            }
+            .red-color{
+                color: rgb(163, 15, 22);
+                background-color: rgb(92, 182, 126);
+                width:25%;
+            }
+            .title{
+                font-size: 30px;
+                height:50px ;
+                width: 100%;
+                text-align: center;
+                border: 8px dashed rgb(139, 46, 46);
+                display:block;
+                text-decoration: underline;
+                /* margin-top: 10px;
+                padding-top: 20px; */
+                padding:10px 5px 10px 5px;
+            }
+            .bigger_content{
+                color: rgb(150, 10, 10);
+                background-color: aqua;
+                height: 100px;
+                overflow:auto;
+            }
+            .image{
+                
+                right:20px;
+                bottom: 20px;
+                position: fixed;
+                border-top-right-radius: 50px;
+                float: right;
+            
+            }
+            .user_name{
+                position:absolute;
+                top: 50px;
+                right: 50px;
+            }
+            .username_wrapper{
+                position: relative;
+                background-color: grey;
+                height:30px;
+                width:400px;
+            }
+            .left{
+                float: left;
+            }
+            .right{
+                float: right;
+            }
+            .bg_color:hover{
+                background-color:red;
+            }
+        
+        </style>
+    </head>
+
+</head>
+    <body>
+        <div class="title">Welcome to CSS</div>
+        <h3>Hello Vignesh Devan, how can we help you!</h3>
+        <p class="bigger_content">Cascading Style Sheets (CSS) is used to format the layout of a webpage.With CSS, you can control the color, 
+           font, the size of text, the spacing between elements, how elements are positioned and laid out, what background 
+           images or background colors are to be used,different displays for different devices and screen sizes, and much more!
+           CSS stands for Cascading Style Sheets, CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+           CSS saves a lot of work. It can control the layout of multiple web pages all at once.External stylesheets are stored in CSS files.
+       </p>
+           <select>
+            <option>Select CSS Properties</option>
+            <option>text-align</option>
+            <option>padding</option>
+            <option>margin</option>
+            <option>border</option>
+            <option>overflow</option>
+
+        </select>
+        <div class="user_name">Vignesh Devan</div>
+        <div class="username_wrapper">once you selected the book then click read to continue!</div>
+        <br><br>
+        <input class="bg_color" type="button" value="Read"></input>
+        <br><br>
+        <img class ="image"src ="file:///c:/Users/10583/Downloads/File_upload_images/css_pic.jpg" width="300" height="300">
+        <br><br>
+    </div>
+    <h3>Latest arrivals in css</h3>
+    <ol class="red-color">
+        <li>position</li>
+        <li>display</li>
+        <li>opacity</li>
+        <li>float</li>
+   </ol>
+   <a href="https://www.google.com"target="_blank">please provide your valuable feedback about our website by clicking this url!</a>
+   <br><br>
+        <span style="color:rgb(218, 15, 150);font-weight:bold">Thank you, Please visit our website for new updates!</span>
+            <div>
+                <div class="left">
+                Previous
+            </div>
+            <div class="right">
+                 Next
+            </div>
+            </div>
+            
+        
+    </body>
+</html>

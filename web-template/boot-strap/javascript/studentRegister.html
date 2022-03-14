@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script>
+
+            function formValidation(){
+                let name_txt = document.getElementById("name").value
+                let email_txt = document.getElementById("email").value
+                let password = document.getElementById("password").value
+               
+                if(name_txt==""||name_txt==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your Name";
+                }
+                else if(email_txt==""||email_txt==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your Email";
+                }
+                else if(password==""||password==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your password";
+                }
+                else{
+                    let _data = {
+                       "name": "James",
+                       "email": "jam456@gmail.com", 
+                       "password":"jsbcac#%"
+                    }
+                    
+                   fetch("http://localhost:8080/studentRegister", {
+                   method: "POST",
+                   body: JSON.stringify(_data),
+                   headers: {"Content-type": "application/json; charset=UTF-8"}
+                   
+                 })
+                 .then(ser_res=>ser_res.text())
+                .then(json_response=>{
+                    document.getElementById("error_text").innerHTML=JSON.stringify(json_response);
+                })
+  
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Registration Form</h1>
+        <div>
+            <input type="text" id="name" placeholder="Enter name">
+        </div>
+        <div>
+            <input type="text" id="email" placeholder="Enter email">
+        </div>
+        <div>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div>
+            <button onclick="formValidation()">Register</button>
+        </div>
+        <h1 id="error_text"></h1>
+    </body>
+</html>

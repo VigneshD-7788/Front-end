@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script>
+
+            function getHTTPcall(){
+                fetch("http://localhost:8080/getStudents",{
+                    method:"GET",
+                headers:{
+                    "Content-type": "application/json; charset=UTF-8",
+                    "token":"eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJIYXJyeSIsImlzcyI6ImhhcnJ1aTU2QGdtYWlsLmNvbSIsImV4cCI6MTY0NjgwODYxOX0.t3FJCAAUPmv1yvW1AG7eyDzKb5cU0W22LK6h83YKnHszNRVlcnvOY4OAtg7mPQPnM4oUqE4WtMRiEBdCbAc2nQ",
+                    "student_id":"1"
+                }
+            })
+            .then(ser_res=>ser_res.json())
+            .then(json_response=>{
+                document.getElementById("response").innerHTML = JSON.stringify(json_response);
+            })
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="response"></div>
+        <button onclick="getHTTPcall()">Get HTTP call</button>
+
+    </body>
+</html>

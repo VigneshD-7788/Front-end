@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <script>
+
+             function loginValidation(){
+                let email_txt = document.getElementById("email").value
+                let password = document.getElementById("password").value
+               
+                if(email_txt==""||email_txt==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your Email";
+                }
+                else if(password==""||password==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your password";
+                }
+                else{
+                    let _data = {
+                       "email": "jam456@gmail.com", 
+                       "password":"jsbcac#%"
+                    }
+
+                     fetch("http://localhost:8080/studentLogin", {
+                     method: "POST",
+                    body: JSON.stringify(_data),
+                    headers: {"Content-type": "application/json; charset=UTF-8"}
+                   
+                 })
+                 .then(ser_res=>ser_res.json())
+                .then(json_response=>{
+                    console.log(json_response)
+                    console.log(json_response['token'])
+                    // json_response('token')
+                    sessionStorage.setItem("token",json_response['Token']);
+                    // sessionStorage.getItem("Token");
+                    document.getElementById("error_text").innerHTML=JSON.stringify(json_response);
+                })
+  
+
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Login Portal</h1>
+        <div>
+            <input type="text" id="email" placeholder="Enter email">
+        </div>
+        <div>
+            <input type="password" id="password" placeholder="Enter password">
+        </div>
+        <div>
+            <button onclick="loginValidation()">Login</button>
+        </div>
+        <h1 id="error_text"></h1>
+    </body>
+</html>

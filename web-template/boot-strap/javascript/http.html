@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script>
+
+            function getHTTPcall(){
+                fetch("https://reqres.in/api/users?page=2")
+
+            }
+            // function postHTTPcall(){
+            //     let req_data= {
+            //      "name": "morpheus",
+            //      "job": "leader"
+            //     }
+            //     fetch("https://reqres.in/api/users",{
+            //         method:"POST",
+            //         body:JSON.stringify(req_data)
+            //     }
+        
+            //     )
+            // }
+        
+            function postHTTPcall(){
+                let name_txt = document.getElementById("name").value
+                let jobname_txt = document.getElementById("jobname").value
+                if(name_txt==""||name_txt==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your Name";
+                }
+                else if (jobname_txt==""||jobname_txt==undefined){
+                    document.getElementById("error_text").innerHTML="Error: Please provide your jobname";
+                }
+                else{
+                    fetch("https://reqres.in/api/users",{
+                    method:"POST"
+                    }
+                    )
+                }
+            }
+    
+        </script>
+    </head>
+    <body>
+        <button onclick="getHTTPcall()">Get HTTP call</button>
+        <button onclick="postHTTPcall()">Post HTTP call</button> 
+        <div>
+            <input type="text"id="name" placeholder="Enter name">
+            <input type="text"id="jobname" placeholder="Enter job name">
+           <div><button onclick="postHTTPcall()">User Register</button>
+           </div>
+        </div>
+        <h1 id="error_text"></h1>
+    </body>
+</html>

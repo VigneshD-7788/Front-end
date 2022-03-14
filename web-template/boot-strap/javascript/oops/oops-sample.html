@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            class Person{
+                constructor(name,age){
+                    this.name = name;
+                    this.age = age;
+                }
+                printName(){
+                console.log("Your name is"+":"+this.name);
+                }
+                printAge(){
+                console.log("Your age is"+":"+this.age);
+               }
+               printDetails(){
+               console.log("name"+":"+this.name+","+"age"+":"+this.age);
+               }
+               add(num1,num2){
+                   console.log(num1+num2)
+               }
+
+            }
+            var Obj = new Person("vignesh",23);
+            Obj.printName();
+            Obj.printAge();
+            Obj.printDetails();
+            Obj.add(30,20);
+
+           var Obj2 = new Person("james",22);
+           Obj2.printName();
+           Obj2.printAge();
+           Obj2.printDetails();
+            
+        </script>
+    </head>
+    <body>
+          <h1>User Details</h1>
+    </body>
+</html>
