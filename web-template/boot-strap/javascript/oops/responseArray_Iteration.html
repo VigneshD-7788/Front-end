@@ -5,7 +5,7 @@
             function postHTTPcall(){
 
                 fetch("https://reqres.in/api/users")
-                .then(ser_res=>ser_res.json())  //parse thge server response
+                .then(ser_res=>ser_res.json())  //parse the server response
                 .then(json_response=>{  //to get the result from the previous method
                     console.log(json_response['data']);
                     let ser_data = json_response['data'];
